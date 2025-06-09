@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { cn } from "@/lib/utils";
 import domtoimage from "dom-to-image";
+import { Twitter, Github } from "lucide-react";
 
 const BATCHES = [
   "Winter 2030",
@@ -259,9 +260,7 @@ export default function HomeClient() {
       </Card>
 
       {submitted && (
-        <div
-            className=""
-        >
+        <div className="flex flex-col items-center gap-4">
           <Card
             ref={cardRef}
             className="w-full max-w-3xl bg-[#faf9f6] dark:bg-neutral-900 rounded-lg shadow p-8 flex flex-col gap-6 items-center row-start-1"
@@ -361,7 +360,7 @@ export default function HomeClient() {
                     <span className="rounded-lg px-3 py-2 text-slate-700 no-underline hover:bg-[#EDEBE3] ">
                       Jobs
                     </span>
-                    <span className="bg-[rgb(230,228,220)] ml-0 px-1.5 font-bold no-underline rounded-[4px] text-[12px] font-bold">
+                    <span className="bg-[rgb(230,228,220)] ml-0 px-1.5  no-underline rounded-[4px] text-[12px] font-bold">
                       {form.jobs}
                     </span>
                   </div>
@@ -414,6 +413,27 @@ export default function HomeClient() {
           </div>
         </div>
       )}
+      
+      <footer className="w-full max-w-3xl flex justify-center items-center gap-6 py-4 border-t mt-auto">
+        <a
+          href="https://twitter.com/gurpalsingh287"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
+        >
+          <Twitter className="w-5 h-5" />
+          <span className="sr-only">Twitter</span>
+        </a>
+        <a
+          href="https://github.com/phantomknight287"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
+        >
+          <Github className="w-5 h-5" />
+          <span className="sr-only">GitHub</span>
+        </a>
+      </footer>
     </div>
   );
 }

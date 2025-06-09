@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import loadLocalFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+
 
 const avenir = loadLocalFont({
   src: [
@@ -38,6 +40,7 @@ export default function RootLayout({
       <body className={`${geistMono.variable} ${avenir.className} antialiased`}>
         {children}
       </body>
+      <Analytics />
     </html>
   );
 }
